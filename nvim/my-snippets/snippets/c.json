@@ -1,0 +1,17 @@
+{
+    "Starter Template": {
+        "prefix": "st",
+        "body": [
+            "#include <stdio.h>",
+            "",
+            "int main(void){",
+            "\t$0",
+                "",
+                "\treturn 0;",
+                "}"
+        ],
+        "description": "Standard starter template for a tiny C program"
+    }
+
+
+}

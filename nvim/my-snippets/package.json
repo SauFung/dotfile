@@ -1,0 +1,19 @@
+{
+    "name": "example-snippets",
+    "contributes": {
+        "snippets": [
+            {
+                "language": "c",
+                "path": "./snippets/c.json"
+            },
+
+            {
+                "language": [
+                    "markdown",
+                    "tex"
+                ],
+                "path": "./snippets/markdown.json"
+            }
+        ]
+    }
+}

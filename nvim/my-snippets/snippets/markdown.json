@@ -1,0 +1,125 @@
+{
+    "cases": {
+        "prefix": "cases",
+        "body": "\\begin{cases}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{cases}",
+        "description": "cases environment"
+    },
+
+    "aligned": {
+        "prefix": "aligned",
+        "body": "\\begin{aligned}\n\t${0:${TM_SELECTED_TEXT}}\n\\end{aligned}",
+        "description": "aligned environment"
+    },
+
+    "2x2 Matrix": {
+        "prefix": "mTwo",
+        "body": [
+            "\\begin{bmatrix}",
+            "\t$1 & $2 \\\\\\",
+            "\t$3 & $4",
+            "\\end{bmatrix}$0"
+        ],
+        "description": "2x2 matrix"
+    },
+
+
+    "3x3 Matrix": {
+        "prefix": "mThree",
+        "body": [
+            "\\begin{bmatrix}",
+            "\t$1 & $2 & $3 \\\\\\",
+            "\t$4 & $5 & $6 \\\\\\",
+            "\t$7 & $8 & $9",
+            "\\end{bmatrix}$0"
+        ],
+        "description": "3x3 matrix"
+    },
+
+
+    "4x4 Matrix": {
+        "prefix": "mFour",
+        "body": [
+            "\\begin{bmatrix}",
+            "\t$1 & $2 & $3 & $4 \\\\\\",
+            "\t$5 & $6 & $7 & $8 \\\\\\",
+            "\t$9 & $10 & $11 & $12 \\\\\\",
+            "\t$13 & $14 & $15 & $16",
+            "\\end{bmatrix}$0"
+        ],
+        "description": "4x4 matrix"
+    },
+
+    "5x5 Matrix": {
+        "prefix": "dFive",
+        "body": [
+            "\\begin{bmatrix}",
+            "\t$1 & $2 & $3 & $4 & $5 \\\\\\",
+            "\t$6 & $7 & $8 & $9 & $10 \\\\\\",
+            "\t$11 & $12 & $13 & $14 & $15 \\\\\\",
+            "\t$16 & $17 & $18 & $19 & $20 \\\\\\",
+            "\t$21 & $22 & $23 & $24 & $25", 
+            "\\end{bmatrix}$0"
+        ],
+        "description": "5x5 Matrix"
+    },
+
+    "2x2 Determinant": {
+        "prefix": "dTwo",
+        "body": [
+            "\\begin{bmatrix}",
+            "\t$1 & $2 \\\\\\",
+            "\t$3 & $4",
+            "\\end{bmatrix}$0"
+        ],
+        "description": "2x2 Determinant"
+    },
+
+
+    "3x3 Determinant": {
+        "prefix": "dThree",
+        "body": [
+            "\\begin{bmatrix}",
+            "\t$1 & $2 & $3 \\\\\\",
+            "\t$4 & $5 & $6 \\\\\\",
+            "\t$7 & $8 & $9",
+            "\\end{bmatrix}$0"
+        ],
+        "description": "3x3 Determinant"
+    },
+
+
+    "4x4 Determinant": {
+        "prefix": "dFour",
+        "body": [
+            "\\begin{bmatrix}",
+            "\t$1 & $2 & $3 & $4 \\\\\\",
+            "\t$5 & $6 & $7 & $8 \\\\\\",
+            "\t$9 & $10 & $11 & $12 \\\\\\",
+            "\t$13 & $14 & $15 & $16",
+            "\\end{bmatrix}$0"
+        ],
+        "description": "4x4 Determinant"
+    },
+
+    "5x5 Determinant": {
+        "prefix": "dFive",
+        "body": [
+            "\\begin{bmatrix}",
+            "\t$1 & $2 & $3 & $4 & $5 \\\\\\",
+            "\t$6 & $7 & $8 & $9 & $10 \\\\\\",
+            "\t$11 & $12 & $13 & $14 & $15 \\\\\\",
+            "\t$16 & $17 & $18 & $19 & $20 \\\\\\",
+            "\t$21 & $22 & $23 & $24 & $25", 
+            "\\end{bmatrix}$0"
+        ],
+        "description": "5x5 Determinant"
+    },
+
+
+    "frac": {
+        "prefix": "frac",
+        "body": "\\frac{ $1 }{ $2 }$0",
+        "description": "frac"
+    }
+
+}
