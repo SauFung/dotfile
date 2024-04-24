@@ -16,10 +16,9 @@ return{
         dependencies = {
             {
                 "williamboman/mason.nvim",
-                cmd = "Mason",
+                -- build = ":MasonUpdate",
                 event = "VeryLazy",
                 keys = { { "<leader>ma", "<cmd>Mason<cr>", desc = "Mason" } },
-                build = ":MasonUpdate",
             },
             "williamboman/mason-lspconfig.nvim",
         },

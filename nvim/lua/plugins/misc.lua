@@ -1,3 +1,7 @@
+local misc = require("config.misc")
+local system = misc.system()
+
+
 return{
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -56,13 +60,18 @@ return{
           }
         }
       }
-      require('telescope').load_extension('fzf')
     end
   },
 
   {
     'nvim-telescope/telescope-fzf-native.nvim',
-    build = "make",
+    build = function ()
+      if system == 1 then
+        return "mingw32-make"
+      else
+        return "make"
+      end
+    end
   },
 
   {

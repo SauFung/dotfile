@@ -7,8 +7,7 @@ local misc = require("config.misc")
 -- 使用 q 退出某些文件
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("close_with_q"),
-  pattern = {
-    "help",
+  pattern = { "help",
     "checkhealth",
     "netrw",
   },

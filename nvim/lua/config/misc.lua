@@ -1,5 +1,7 @@
 local M = {}
-M.github_url = "https://ghproxy.org/https://github.com/"
+-- M.github_url = "https://ghproxy.org/https://github.com/"
+M.github_url = "https://github.com/"
+
 
 M.im_select = function()
   if vim.fn.has("wsl") == 1 then

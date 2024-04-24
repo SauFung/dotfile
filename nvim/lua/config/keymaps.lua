@@ -31,7 +31,8 @@ map("n", "<C-h>", "<cmd>BufferLineCyclePrev<cr>", desc("Previous buffer"))
 map("n", "<C-l>", "<cmd>BufferLineCycleNext<cr>", desc("Previous buffer"))
 
 -- 重新加载配置文件
-map("n", "<leader>s", "<cmd>source " .. conf .. "/init.lua<cr>", desc("Reload configuration"))
+-- map("n", "<leader>s", "<cmd>source " .. conf .. "/init.lua<cr>", desc("Reload configuration"))
+-- map("n", "<leader>s", "<cmd>luafile $MYVIMRC<cr>", desc("Reload configuration"))
 -- map("n", "<leader>s", function () print(conf .. "/init.lua") end, desc("Reload configuration"))
 -- map("n", "<leader>s", "<cmd>edit " .. conf .. "/init.lua<cr>", desc("Reload configuration"))
 

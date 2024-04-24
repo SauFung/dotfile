@@ -20,6 +20,9 @@ o.clipboard = "unnamedplus"
 o.autoindent = true
 -- 空格代替制表符
 o.expandtab = true
+-- 打开带有制表符的文件时所占的空格数
+-- 使用了 expandtab 后 tabstop 在编辑时不影响
+o.tabstop = 4
 -- 插入和删除空格数
 o.softtabstop = 4
 -- 缩进空格数

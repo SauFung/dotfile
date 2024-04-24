@@ -1,4 +1,5 @@
-local git = require("config.misc").github_url
+local misc = require("config.misc")
+local git = misc.github_url
 
 return {
 
@@ -31,6 +32,8 @@ return {
       require("nvim-treesitter.install").prefer_git = true
 
       require"nvim-treesitter.configs".setup {
+        highlight = { enable = true },
+        indent = { enable = true },
         ensure_installed = {
           "vim",
           "regex",
@@ -47,6 +50,21 @@ return {
         },
       }
 
+    end
+  },
+
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+  },
+
+  {
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup({
+
+      })
     end
   },
 
