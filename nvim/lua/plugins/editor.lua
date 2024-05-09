@@ -32,7 +32,10 @@ return {
       require("nvim-treesitter.install").prefer_git = true
 
       require"nvim-treesitter.configs".setup {
-        highlight = { enable = true },
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = false,
+        },
         indent = { enable = true },
         ensure_installed = {
           "vim",
@@ -47,9 +50,11 @@ return {
           "json",
           "jsonc",
           "yaml",
+          "ini",
         },
+        sync_install = true,
+        auto_install = true,
       }
-
     end
   },
 

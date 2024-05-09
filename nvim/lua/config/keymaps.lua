@@ -36,8 +36,10 @@ map("n", "<C-l>", "<cmd>BufferLineCycleNext<cr>", desc("Previous buffer"))
 -- map("n", "<leader>s", function () print(conf .. "/init.lua") end, desc("Reload configuration"))
 -- map("n", "<leader>s", "<cmd>edit " .. conf .. "/init.lua<cr>", desc("Reload configuration"))
 
+map("n", "<leader>hl", "<cmd>nohl<cr>", desc("No Highlight"))
 
 map("n", "<leader>l", function() vim.fn.system("pwd") end, desc("Print current directory"))
+
 
 ---------- Plugins ----------
 -- telescope
