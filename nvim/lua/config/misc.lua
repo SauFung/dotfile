@@ -11,26 +11,23 @@ M.im_select = function()
   end
 end
 
--- M.github_url = "https://kkgithub.com/"
+M.win32yank = function()
+  if vim.fn.has("wsl") == 1 then
+    return "/mnt/c/Env/win32yank/win32yank.exe"
+  end
+end
+
 
 -- 判断系统的方法
 -- 方法 1:
 -- vim.loop.os_uname().sysname
 -- 直接返回系统类型
 
-
 -- 方法 2：
 -- vim.fn.has("win32")
 -- vim.fn.has("win64")
 -- 若是返回 1，则为 Windows
 
--- M.clangd_path = function ()
---   if is_win then
---     return { "C:/Env/mingw64/bin/clangd.exe" }
---   else
---     return { "clangd" }
---   end
--- end
 
 
 -- 0 = Linux

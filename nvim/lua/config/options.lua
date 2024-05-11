@@ -42,7 +42,7 @@ o.showmode = false
 
 
 if vim.fn.has("wsl") == 1 then
-  local win32yank = '/mnt/c/Env/win32yank/win32yank.exe'
+  local win32yank = require("config.misc").win32yank()
   vim.g.clipboard = {
     name = 'win32yank-wsl',
     copy = {
