@@ -51,20 +51,36 @@ vim.api.nvim_create_autocmd("FileType", {
 -- 中文输入法值为 2052
 -- 英文输入法值为 1033
 -- `im-select` 命令查看输入法对应值
-local im_select = misc.im_select
+local im_select = misc.im_select()
 local system = misc.system()
 local win_status
 local linux_status
+local wsl_status
 local im = augroup("im_select")
+
+-- 2052 = Chinese IM
+-- 1033 = English IM
+
+-- 已适配：
+-- Windows
+-- WSL
+-- Linux（untest)
 
 vim.api.nvim_create_autocmd("InsertLeave",{
   group = im,
   pattern = "*",
   callback = function ()
     if system == 0 then
-      linux_status = tonumber(vim.fn.system("fcitx5-remote"))
-      if linux_status == 2 then
-        vim.api.nvim_command(":silent :!fcitx5-remote -c")
+      if vim.fn.has("wsl") == 1 then
+        wsl_status = tonumber(vim.fn.system(im_select))
+        if wsl_status == 2052 then
+          vim.api.nvim_command(":silent :!" .. im_select .. " 1033")
+        end
+      else
+        linux_status = tonumber(vim.fn.system("fcitx5-remote"))
+        if linux_status == 2 then
+          vim.api.nvim_command(":silent :!fcitx5-remote -c")
+        end
       end
     end
 
@@ -82,8 +98,14 @@ vim.api.nvim_create_autocmd("InsertEnter",{
   pattern = "*",
   callback = function ()
     if system == 0 then
-      if linux_status == 2 then
-        vim.api.nvim_command("fcitx5-remote -t")
+      if vim.fn.has("wsl") == 1 then
+        if wsl_status == 2052 then
+          vim.api.nvim_command(":silent :!" .. im_select .. " 2052")
+        end
+      else
+        if linux_status == 2 then
+          vim.api.nvim_command("fcitx5-remote -t")
+        end
       end
     end
 

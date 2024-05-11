@@ -1,7 +1,13 @@
 local M = {}
 M.github_url = "https://ghproxy.org/https://github.com/"
 
-M.im_select = "C:/Env/im-select/im-select.exe"
+M.im_select = function()
+  if vim.fn.has("wsl") == 1 then
+    return "/mnt/c/Env/im-select/im-select.exe"
+  else
+    return "C:/Env/im-select/im-select.exe"
+  end
+end
 
 -- M.github_url = "https://kkgithub.com/"
 
@@ -10,22 +16,19 @@ M.im_select = "C:/Env/im-select/im-select.exe"
 -- vim.loop.os_uname().sysname
 -- 直接返回系统类型
 
-local is_win = function ()
-  return vim.loop.os_uname().sysname:find("Windows") ~= nil
-end
 
 -- 方法 2：
 -- vim.fn.has("win32")
 -- vim.fn.has("win64")
 -- 若是返回 1，则为 Windows
 
-M.clangd_path = function ()
-  if is_win then
-    return { "C:/Env/mingw64/bin/clangd.exe" }
-  else
-    return { "clangd" }
-  end
-end
+-- M.clangd_path = function ()
+--   if is_win then
+--     return { "C:/Env/mingw64/bin/clangd.exe" }
+--   else
+--     return { "clangd" }
+--   end
+-- end
 
 
 -- 0 = Linux
@@ -44,6 +47,13 @@ end
 
 
 
+M.clangd_path = function ()
+  if M.system == 1 then
+    return { "C:/Env/mingw64/bin/clangd.exe" }
+  else
+    return { "clangd" }
+  end
+end
 
 
 
